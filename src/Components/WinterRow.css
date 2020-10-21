@@ -1,0 +1,55 @@
+.winterRow {
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1620px;
+  height: 530px;
+  margin-bottom: 15px;
+  padding-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.winterRow > p {
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+.winterRow__container {
+  background-color: white;
+
+  padding: 10px;
+  overflow: scroll;
+  scrollbar-width: none;
+  display: flex;
+  justify-content: space-between;
+  height: 82%;
+}
+
+@media only screen and (max-width: 1621px) {
+  .winterRow {
+    width: 1260px;
+  }
+}
+
+@media only screen and (max-width: 1263px) {
+  .winterRow {
+    width: 1200px;
+  }
+}
+
+@media only screen and (max-width: 1152px) {
+  .winterRow {
+    width: 92.5vw;
+    margin-right: 2.5vw;
+    margin-left: 5w;
+  }
+}
+
+@media only screen and (max-width: 875px) {
+  .winterRow {
+    width: 92.5vw;
+    margin-right: 2.5vw;
+    margin-left: 5w;
+  }
+}

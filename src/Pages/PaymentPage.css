@@ -1,0 +1,158 @@
+.paymentPage__title {
+  color: #ff5a00;
+  width: 50%;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 5%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 7px;
+  border-bottom: 4px solid #ff5a00;
+}
+
+.paymentPage__container {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  margin-bottom: 15px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.paymentPage__left {
+  background-color: white;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  padding: 15px;
+}
+
+.paymentPage__left > h2 {
+  font-weight: 600;
+  margin-left: 2.5%;
+}
+
+.paymentPage__left > p {
+  font-weight: 400;
+  color: rgb(90, 89, 89);
+  margin-left: 2.5%;
+}
+
+.paymentPage__inputContainer > p {
+  color: #999;
+  margin-left: 2.5%;
+}
+
+.paymentPage__inputContainer > input {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-top: 15px;
+  margin-bottom: 6px;
+
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #aaa;
+
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: #222;
+  font-family: Open Sans, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  line-height: 21px;
+
+  min-width: 0;
+  outline: none;
+  padding: 8px;
+}
+
+.paymentPage__inputContainer > input:hover {
+  border: 2px solid #aaa;
+}
+
+.paymentPage__right {
+  background-color: white;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  padding: 15px;
+  height: 280px;
+}
+
+.paymentPage__productPrice {
+  display: flex;
+  justify-content: space-between;
+  color: #222;
+  font-size: 14px;
+}
+
+.paymentPage__postman {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  color: #222;
+  font-size: 14px;
+}
+
+.paymentPage__sum {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.paymentPage__sum > p {
+  margin-right: 8px;
+  color: #767676;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: Open Sans, sans-serif;
+  line-height: 21px;
+}
+
+.paymentPage__sum > b {
+  color: #3a4e58;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.paymentPage__sum > b > span {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.paymentPage__right > button {
+  background-color: #ff5a00;
+  color: white;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+
+  height: 40px;
+  box-sizing: border-box;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.paymentPage__right > p {
+  color: #999;
+}
+
+@media only screen and (max-width: 711px) {
+  .paymentPage__container {
+    flex-direction: column;
+  }
+}

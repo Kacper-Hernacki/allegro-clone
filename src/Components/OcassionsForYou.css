@@ -1,0 +1,40 @@
+.ocassionsForYou {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1620px;
+  height: 530px;
+  margin-bottom: 15px;
+}
+
+.ocassionsForYou > p {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 1621px) {
+  .ocassionsForYou {
+    width: 1260px;
+  }
+}
+
+@media only screen and (max-width: 1263px) {
+  .ocassionsForYou {
+    width: 1200px;
+  }
+}
+
+@media only screen and (max-width: 1152px) {
+  .ocassionsForYou {
+    width: 92.5vw;
+    margin-right: 2.5vw;
+    margin-left: 5w;
+  }
+}
+
+@media only screen and (max-width: 875px) {
+  .ocassionsForYou {
+    width: 92.5vw;
+    margin-right: 2.5vw;
+    margin-left: 5w;
+  }
+}

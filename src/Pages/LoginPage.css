@@ -1,0 +1,243 @@
+.loginPage__login > h1 {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.loginPage__loginContainer {
+  margin-top: 15px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loginPage__login {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+
+  background-color: white;
+}
+
+.loginPage__login > input {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 6px;
+
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #aaa;
+
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: #222;
+  font-family: Open Sans, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  line-height: 21px;
+
+  min-width: 0;
+  outline: none;
+  padding: 8px;
+}
+
+.loginPage__loginButtons > button {
+  background-color: #ff5a00;
+  color: white;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  width: 170px;
+  height: 40px;
+  box-sizing: border-box;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.loginPage__loginButtons {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px;
+}
+
+.loginPage__loginButtons > p {
+  color: #00a790;
+  font-size: 14px;
+  line-height: 21px;
+  cursor: pointer;
+}
+
+.loginPage__register {
+  background-color: white;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.loginPage__register > p {
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-left: 15px;
+  cursor: pointer;
+  color: #00a790;
+}
+
+.loginPage__divider {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loginPage__divider > hr {
+  width: 100%;
+  margin: 15px 0 16px;
+  background-color: #ddd;
+  height: 1px;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.loginPage__divider > span {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.loginPage__socialButtons {
+  display: flex;
+  padding-bottom: 20px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.loginPage__socialButtons > button {
+  display: flex;
+  align-items: center;
+  width: 210px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 10px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+  text-transform: uppercase;
+}
+
+.loginPage__facebookButton {
+  background-color: #4267b2;
+  color: white;
+  border: 0;
+  margin-bottom: 15px;
+}
+
+.loginPage__googleButton {
+  background-color: white;
+  color: #767676;
+  border: 1px solid #767676;
+}
+
+.loginPage__socialButtons > button > img {
+  object-fit: contain;
+  width: 25px;
+}
+
+.loginPage__rules {
+  margin-top: 30px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #222;
+  font-family: Open Sans, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.loginPage__rules > p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.loginPage__rules > p > span {
+  color: #54cab6;
+  cursor: pointer;
+}
+
+.loginPage__chooses {
+  margin-top: 30px;
+
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loginPage__choose {
+  margin-top: 10px;
+
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+.loginPage__choose > img {
+  object-fit: contain;
+  width: 70px;
+  margin-left: 15px;
+}
+
+.loginPage__chooseDescription {
+  margin-left: 15px;
+}
+
+.loginPage__chooseDescription > p {
+  font-size: 14px;
+  color: #222;
+  line-height: 21px;
+  padding-top: 8px;
+}
+
+.loginPage__footer {
+  width: 100%;
+  background-color: #3a4e58;
+  color: white;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 550;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  padding-bottom: 30px;
+  margin-top: 30px;
+  position: relative;
+  bottom: 0;
+}
+
+.loginPage__footer > p > span {
+  color: #54cab6;
+}
+
+.loginPage__footer > img {
+  margin-right: 70px;
+}
+
+@media only screen and (min-width: 800px) {
+  .loginPage__login > input {
+    width: 50%;
+  }
+}

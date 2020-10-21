@@ -1,0 +1,128 @@
+.cartPage__title {
+  font-size: 30px;
+  font-weight: 500;
+  padding: 15px;
+}
+
+.cartPage__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cartPage__containerLeft {
+  width: 400px;
+  margin: 15px;
+  margin-right: 0;
+}
+
+.cartPage__containerRight {
+  width: 400px;
+  background-color: white;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-top: 25px;
+  height: 240px;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cartPage__amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartPage__amount > p {
+  color: #767676;
+  text-transform: uppercase;
+  margin-right: 15px;
+}
+
+.cartPage__amountPrice {
+  display: flex;
+  flex-direction: column;
+}
+
+.cartPage__amountPrice > p {
+  color: #3a4e58;
+  font-family: Roboto, sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.cartPage__amountPrice > p > span {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.cartPage__amountPrice > b {
+  color: #767676;
+  font-weight: 600;
+
+  margin-left: auto;
+}
+
+.cartPage__buttons {
+  display: flex;
+  flex-direction: column;
+
+  padding: 15px;
+}
+
+.cartPage__buttons > button {
+  cursor: pointer;
+}
+
+.cartPage__buttonZero {
+  background: #66bce5;
+  color: #fff;
+  outline: 0;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 0;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 2px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.cartPage__buttonBuy {
+  background: #ff5a00;
+  color: #fff;
+  outline: 0;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 0;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 2px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.cartPage__buttonContinue {
+  background: white;
+  color: #2ab9a3;
+  outline: 0;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 0;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 2px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  letter-spacing: 2.3px;
+}

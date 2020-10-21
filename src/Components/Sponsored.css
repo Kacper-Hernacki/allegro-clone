@@ -1,0 +1,77 @@
+.sponsored__row {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.sponsored__offerImage {
+  object-fit: contain;
+  width: 110px;
+  padding-right: 15px;
+}
+
+.sponsored__offer {
+  background-color: white;
+  padding: 15px;
+  margin-left: 15px;
+  display: flex;
+  height: 150px;
+}
+
+.sponsored__offerDiscount {
+  display: flex;
+  padding-bottom: 8px;
+}
+
+.sponsored__offerPercentage {
+  margin-right: 10px;
+  background-color: #1bb826;
+  color: white;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding: 1.8px;
+}
+
+.sponsored__offerOld {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.sponsored__price {
+  display: flex;
+  align-items: center;
+}
+
+.sponsored__offerPrice {
+  font-size: 21px;
+  font-weight: 600;
+  color: #3a4e58;
+}
+
+.sponsored__offerPrice > span {
+  font-size: 16px !important;
+}
+
+.sponsored__offerPriceImage {
+  object-fit: contain;
+  height: 17px;
+  margin-left: 8px;
+}
+
+.sponsored__offerProduct {
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  padding-top: 6px;
+}
+
+.sponsored__offerBought {
+  font-size: 12px;
+  color: grey;
+  padding-top: 8px;
+}
+
+@media only screen and (max-width: 905px) {
+  .sponsored {
+    display: hidden;
+    visibility: hidden;
+  }
+}

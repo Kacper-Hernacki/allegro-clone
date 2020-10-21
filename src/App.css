@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+.app {
+  background-color: #eceff1 !important;
+  scrollbar-width: none;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app__body {
+  margin-top: 15px;
+  background-color: #eceff1 !important;
+  display: grid;
+  grid-template-columns: auto 310px 1000px 310px auto;
+  grid-template-rows: 325px 315px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Responsive app__body */
+
+@media only screen and (max-width: 1621px) {
+  .app__body {
+    grid-template-columns: auto 220px 730px 310px auto;
+    grid-template-rows: 325px 315px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 1263px) {
+  .app__body {
+    grid-template-columns: auto 220px auto auto;
+    grid-template-rows: 325px 315px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media only screen and (max-width: 1152px) {
+  .app__body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 350px 350px;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .app__body > div {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 875px) {
+  .app__body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    margin-right: 0;
+    padding-right: 0;
+  }
+}
+
+/* APP Products */
+
+.app__products {
+  margin-top: 15px;
+  background-color: #eceff1 !important;
+  display: grid;
+  grid-template-columns: auto 540px 540px 540px auto;
+  grid-template-rows: 280px 280px 200px;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 1621px) {
+  .app__products {
+    grid-template-columns: auto 420px 420px 420px auto;
+  }
+}
+
+@media only screen and (max-width: 1263px) {
+  .app__products {
+    grid-template-columns: auto 400px 400px 400px auto;
+  }
+}
+
+@media only screen and (max-width: 1152px) {
+  .app__products {
+    grid-template-columns: auto 450px 450px auto;
+    grid-template-rows: 280px 280px 15px;
+  }
+}
+
+@media only screen and (max-width: 875px) {
+  .app__products {
+    grid-template-columns: auto 50% 50% auto;
+  }
+}
+
+@media only screen and (max-width: 736px) {
+  .app__products {
+    grid-template-columns: 1fr;
   }
 }

@@ -1,0 +1,82 @@
+.footer {
+  width: 100%;
+}
+
+.footer__container {
+  background-color: white;
+  width: 100%;
+}
+
+.footer__columnContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 15px;
+}
+
+.footer__column {
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.footer__column > h3 {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #222;
+}
+
+.footer__column > p {
+  font-size: 14px;
+  color: rgb(58, 57, 57);
+  padding-bottom: 15px;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+.footer__rules {
+  width: 100%;
+  background-color: #3a4e58;
+  color: white;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 550;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  padding-bottom: 30px;
+}
+
+.footer__rules > p > span {
+  color: #54cab6;
+}
+
+.footer__rules > img {
+  margin-right: 70px;
+}
+
+.footer__logos {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.footer__downloads > img {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.footer__socialMedia > img {
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 450px) {
+  .footer__downloads > img {
+    object-fit: contain;
+    width: 100px;
+  }
+}

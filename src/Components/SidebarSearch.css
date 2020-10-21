@@ -1,0 +1,99 @@
+.sidebarSearch {
+  background-color: white;
+  cursor: pointer;
+  max-width: 240px;
+  padding: 25px;
+  margin-bottom: 15px;
+  height: 100%;
+}
+
+.sidebarSearch__categories > h1,
+h2,
+h3 {
+  margin-bottom: 6px;
+}
+
+.sidebarSearch__categories > h3 {
+  font-size: 16px;
+}
+
+.sidebarSearch__categories > p {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.sidebarSearch__categoriesRow {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  font-size: 16px;
+}
+
+.sidebarSearch__more {
+  color: #00a790;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.sidebarSearch__filters > h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.sidebarSearch__filtersRowSmart {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.sidebarSearch__filtersRowSmart > p {
+  display: flex;
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+.sidebarSearch__filtersRowSmart > p > img {
+  object-fit: contain;
+  height: 20px;
+  padding-left: 10px;
+}
+
+.sidebarSerch__filterLeft {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebarSearch__filtersRow > p {
+  font-size: 16px;
+}
+
+.sidebarSearch__filtersRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.sidebarSerch__filterLeft > p {
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+.sidebarSearch__cities > h2 {
+  margin-top: 30px;
+}
+
+.sidebarSearch__cities > p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #00a790;
+}
+
+@media only screen and (max-width: 800px) {
+  .sidebarSearch {
+    display: none;
+    visibility: hidden;
+  }
+}

@@ -1,0 +1,285 @@
+.register__container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.register__container > h1 {
+  font-size: 27px;
+  font-weight: 400;
+  color: #222;
+  margin: 0 0 16px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.register__choice {
+  background-color: white;
+
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.register__choice > p {
+  font-size: 14px;
+  color: #00a790;
+  padding: 10px;
+  text-align: end;
+}
+
+.register__choiceContainer {
+  display: block;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.register__choiceContainer ul {
+  list-style: none;
+  margin: 0;
+}
+
+ul li {
+  color: #222;
+
+  display: block;
+  position: relative;
+
+  width: 100%;
+  height: 65px;
+}
+
+ul li input[type='radio'] {
+  position: absolute;
+  visibility: hidden;
+}
+
+ul li p {
+  display: block;
+  position: relative;
+  top: -20px;
+  left: 10px;
+  font-size: 12px;
+  color: #999;
+}
+
+ul li label {
+  display: inline-block;
+  position: relative;
+  font-weight: 600;
+  font-size: 1.35em;
+  padding-left: 50px;
+  top: -10px;
+  margin: 10px auto;
+  height: 30px;
+  z-index: 9;
+  cursor: pointer;
+  -webkit-transition: all 0.25s linear;
+}
+
+ul li .check {
+  display: block;
+  position: absolute;
+  border: 2px solid #aaaaaa;
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  top: 0px;
+  left: 10px;
+  z-index: 5;
+  transition: border 0.25s linear;
+  -webkit-transition: border 0.25s linear;
+}
+
+ul li .check::before {
+  display: block;
+  position: absolute;
+  content: '';
+  border-radius: 100%;
+  height: 10px;
+  width: 10px;
+  top: 5px;
+  left: 5px;
+  margin: auto;
+  transition: background 0.25s linear;
+  -webkit-transition: background 0.25s linear;
+}
+
+input[type='radio']:checked ~ .check {
+  border: 2px solid #1bb826;
+}
+
+input[type='radio']:checked ~ .check::before {
+  background: #1bb826;
+}
+
+input[type='radio']:checked ~ label {
+  color: #222;
+}
+
+.register__data {
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.register__dataContainer {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+}
+
+.register__dataInput {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.register__dataInput > p {
+  color: 999;
+}
+
+.register__dataInput > input {
+  width: 100%;
+
+  margin-top: 15px;
+  margin-bottom: 6px;
+
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #aaa;
+
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: #222;
+  font-family: Open Sans, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  line-height: 21px;
+
+  min-width: 0;
+  outline: none;
+  padding: 8px;
+}
+
+.register__button {
+  background-color: #ff5a00;
+  color: white;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  width: 170px;
+  height: 40px;
+  box-sizing: border-box;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.register__dataInputsBirth {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.register__dataInputsBirth > p {
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.register__dataInputsBirth > input {
+  width: 20%;
+
+  margin-top: 15px;
+  margin-bottom: 6px;
+
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #222;
+
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: #222;
+  font-family: Open Sans, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  line-height: 21px;
+
+  min-width: 0;
+  outline: none;
+  padding: 8px;
+}
+
+.register__dataInputsBirth > select {
+  width: 50%;
+  height: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+
+  outline: none;
+  cursor: pointer;
+
+  font-size: 14px;
+  font-family: Open Sans, sans-serif;
+  line-height: 41px;
+  color: #222;
+  padding: 10px;
+  padding-top: 12px;
+}
+
+.register__birthDescription {
+  color: #222 !important;
+  font-size: 12px !important;
+}
+
+.register__dataCheckBoxes {
+  margin-top: 15px;
+}
+
+.register__dataCheckBox {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.register__dataCheckBox > input {
+  margin-right: 10px;
+}
+
+.register__dataCheckBox > p {
+  font-size: 14px;
+}
+
+.register__rules {
+  font-size: 14px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #999;
+}
+
+.register__rules > span {
+  color: #00a790;
+  cursor: pointer;
+}
+
+.register__more {
+  color: #00a790;
+  cursor: pointer;
+}
+
+.register__optional {
+  color: #999;
+  font-size: 12px;
+}

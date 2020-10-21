@@ -1,0 +1,10 @@
+.rowOfProducts {
+  background-color: white;
+
+  padding: 10px;
+  overflow: scroll;
+  scrollbar-width: none;
+  display: flex;
+  justify-content: space-between;
+  height: 82%;
+}

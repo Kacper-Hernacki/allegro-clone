@@ -1,0 +1,101 @@
+.banner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1620px;
+  height: 530px;
+  margin-bottom: 15px;
+}
+
+.banner__container {
+  background-color: white;
+  overflow: scroll;
+  scrollbar-width: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.banner__container > img {
+  flex: 0.5;
+  object-fit: cover;
+}
+
+.banner__products {
+  flex: 0.5;
+  background-color: white;
+}
+
+.banner > p {
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.bannerProducts__container {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.bannerProducts__more {
+  color: #00a790;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding-top: 10px;
+  text-align: center;
+  border-top: 1px solid lightgrey;
+  letter-spacing: 1px;
+  margin-right: 20px;
+  margin-left: 20px;
+  padding-bottom: 20px;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+@media only screen and (max-width: 1621px) {
+  .banner {
+    width: 1260px;
+  }
+}
+
+@media only screen and (max-width: 1263px) {
+  .banner {
+    width: 1200px;
+  }
+}
+
+@media only screen and (max-width: 1152px) {
+  .banner {
+    width: 92.5vw;
+    margin-right: 2.5vw;
+    margin-left: 5w;
+  }
+}
+
+@media only screen and (max-width: 1095px) {
+  .banner__container > img {
+    display: none;
+    visibility: hidden;
+  }
+
+  .banner {
+    position: relative;
+    z-index: 50;
+  }
+
+  .banner__products {
+    flex: 1;
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+}
+
+@media only screen and (max-width: 875px) {
+  .banner {
+    width: 92.5vw;
+    margin-right: 2.5vw;
+    margin-left: 5w;
+  }
+}
