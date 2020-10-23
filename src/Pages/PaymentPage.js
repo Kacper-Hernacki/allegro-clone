@@ -1,8 +1,11 @@
 import React from 'react';
 import Footer from '../Components/Footer';
 import './PaymentPage.css';
+import { useStateValue } from '../StateProvider';
+import { Link } from 'react-router-dom';
 
 function PaymentPage() {
+  const [{ amount, buyNow }, dispatch] = useStateValue();
   return (
     <div className="paymentPage">
       <p className="paymentPage__title">Dostawa i płatność</p>
@@ -35,7 +38,12 @@ function PaymentPage() {
           <h2>Podsumowanie</h2>
           <div className="paymentPage__productPrice">
             <p>Wartość przedmiotów</p>
-            <p>39,90 zł</p>
+            {amount?.map((item) => (
+              <p>{item.price} zł</p>
+            ))}
+            {buyNow?.map((item) => (
+              <p>{item.price * item.items} zł</p>
+            ))}
           </div>
 
           <div className="paymentPage__postman">
@@ -46,11 +54,19 @@ function PaymentPage() {
           <div className="paymentPage__sum">
             <p>Do zapłaty</p>
             <b>
-              39<span>,90 zł</span>
+              {amount?.map((item) => (
+                <p>{item.price} zł</p>
+              ))}
+              {buyNow?.map((item) => (
+                <p>{item.price * item.items} zł</p>
+              ))}
             </b>
           </div>
+          <Link to="/bought">
+            {' '}
+            <button className="paymentPage__buttonBuy">Kupuję i płacę</button>
+          </Link>
 
-          <button>Kupuję i płacę</button>
           <p>
             Klikając w ten przycisk potwierdzasz zakup. Sprzedawca otrzyma twoje
             zamówienie.

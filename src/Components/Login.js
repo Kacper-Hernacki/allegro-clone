@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.css';
+import { Link } from 'react-router-dom';
 
 function Login() {
+  const [user, setUser] = useState(false);
+
   return (
     <div className="login">
       <div className="login__row">
@@ -25,7 +28,14 @@ function Login() {
         />
         <div className="login__rowTitle">Oceń produkty</div>
       </div>
-      <button className="login__button">Zaloguj się</button>
+
+      {!user ? (
+        <Link to="/login">
+          <button className="login__button">Zaloguj się</button>
+        </Link>
+      ) : (
+        <button className="login__button">Wyloguj się</button>
+      )}
     </div>
   );
 }

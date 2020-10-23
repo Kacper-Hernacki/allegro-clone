@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '../Components/Footer';
 import './Register.css';
+import { useHistory } from 'react-router-dom';
+import { auth } from '../firebase';
 
 function Register() {
+  const history = useHistory();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const register = (e) => {
+    e.preventDefault();
+
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth) => {
+        history.push('/login');
+      })
+      .catch((e) => alert());
+  };
+
   return (
     <div className="register">
       <div className="register__container">
@@ -40,14 +57,24 @@ function Register() {
           <div className="register__dataContainer">
             <div className="register__dataInputs">
               <div className="register__dataInput">
-                <input placeholder="E-mail" type="text" />
+                <input
+                  placeholder="E-mail"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  type="email"
+                />
                 <p>
                   Na ten adres będziesz otrzymywać wszystkie wiadomości od
                   Allegro.
                 </p>
               </div>
               <div className="register__dataInput">
-                <input placeholder="Hasło" type="text" />
+                <input
+                  placeholder="Hasło"
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
+                  type="password"
+                />
                 <p>Użyj: 8 znaków, 1 wielkiej litery, 1 cyfry.</p>
               </div>
               <div className="register__dataInputsBirth">
@@ -123,7 +150,9 @@ function Register() {
                 </p>
               </div>
             </div>
-            <button className="register__button">zakładam konto</button>
+            <button onClick={register} className="register__button">
+              zakładam konto
+            </button>
           </div>
         </div>
 

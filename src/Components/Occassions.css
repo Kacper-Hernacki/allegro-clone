@@ -9,8 +9,8 @@
 }
 
 .ocassions__container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  place-items: center;
 }
 
 .ocassions > h2 {

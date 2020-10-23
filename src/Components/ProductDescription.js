@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import './ProductDescription.css';
+import { Link } from 'react-router-dom';
+import { useStateValue } from '../StateProvider';
 
-function ProductDescription() {
-  const [items, setItems] = useState(0);
+function ProductDescription({ id, title, image, price, discount, oldPrice }) {
+  const [{ basket }, dispatch] = useStateValue();
+  const [items, setItems] = useState(1);
 
   function addItem() {
     setItems((prevItem) => prevItem + 1);
@@ -14,11 +17,41 @@ function ProductDescription() {
     }
   }
 
+  const addToBasket = () => {
+    dispatch({
+      type: 'ADD_TO_BASKET',
+      item: {
+        id: id,
+        title: title,
+        image: image,
+        price: price,
+        discount: discount,
+        items: items,
+      },
+    });
+    console.log('>>>>>>>', items);
+  };
+
+  const buyNow = () => {
+    dispatch({
+      type: 'BUY_NOW',
+      item: {
+        id: id,
+        title: title,
+        image: image,
+        price: price,
+        discount: discount,
+        items: items,
+      },
+    });
+    console.log('>>>>>>> bought', items);
+  };
+
   return (
     <div className="productDescription">
       <div className="productDescription__main">
         <div className="productDescription__mainTitle">
-          <h2>Szuflada narożna</h2>
+          <h2>{title}</h2>
           <div className="productDescription__mainTitleRight">
             <p>Inne oferty tego produktu</p>
             <h4>Brak</h4>
@@ -26,25 +59,20 @@ function ProductDescription() {
         </div>
         <div className="productDescription__mainProduct">
           <div className="productDescription__mainLeft">
-            <img
-              src="https://s1.meble.pl/gfx/_zdjecia_wspolne/sklep_oferta/0/38/38779/bszuflada_tandembox_narozna_wys_m83mm_dl_6cm_5kg_b_1794340833.jpg"
-              alt=""
-            />
+            <img src={image} alt="" />
           </div>
 
           <div className="productDescription__mainRight">
-            <h2>Szuflada narożna</h2>
+            <h2>{title}</h2>
             <p>
               Od <span className="productDescription__dealer"> shoppix</span>
             </p>
             <div className="products__discountContainer">
-              <div className="product__discount">-10 %</div>
-              <div className="product__oldPrice">999,99 zł</div>
+              {discount && <div className="product__discount">{discount}</div>}
+
+              <div className="product__oldPrice">{oldPrice}</div>
             </div>
-            <p className="product__price">
-              899
-              <span>,00 zł</span>
-            </p>
+            <p className="product__price">{price} zł</p>
 
             <div className="productDescription__postman">
               <div className="productDescription__postmanRow">
@@ -72,14 +100,28 @@ function ProductDescription() {
               <p>Liczba sztuk</p>
               <div className="productDescription__add">
                 <button onClick={minusItem}>-</button>
-                <input value={items} type="numeric" />
+                <input
+                  value={items}
+                  onChange={(event) => setItems(event.target.value)}
+                  type="numeric"
+                />
                 <button onClick={addItem}>+</button>
               </div>
             </div>
 
             <div className="productDescription__buttons">
-              <button>Dodaj do koszyka</button>
-              <button>Kup teraz</button>
+              <Link to="/cart">
+                <button
+                  onClick={addToBasket}
+                  className="productDescription__button">
+                  Dodaj do koszyka
+                </button>
+              </Link>
+              <Link to="/payment">
+                <button onClick={buyNow} className="productDescription__button">
+                  Kup teraz
+                </button>
+              </Link>
             </div>
 
             <div className="productDescription__footer">

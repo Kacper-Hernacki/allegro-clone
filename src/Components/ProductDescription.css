@@ -160,7 +160,7 @@
   flex-direction: column;
 }
 
-.productDescription__buttons > button {
+.productDescription__button {
   background-color: #ff5a00;
   color: white;
   border: 0;

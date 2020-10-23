@@ -1,17 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './LoginPage.css';
+import { Link, useHistory } from 'react-router-dom';
+import { auth, provider } from '../firebase';
+import { useStateValue } from '../StateProvider';
 
 function LoginPage() {
+  // login & register
+  const history = useHistory();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [state, dispatch] = useStateValue();
+
+  const login = (e) => {
+    e.preventDefault();
+
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        history.push('/');
+      })
+      .catch((e) => alert('Błędne hasło lub login'));
+  };
+
+  const signIn = () => {
+    // sign in
+    auth
+      .signInWithPopup(provider)
+      .then((result) => {
+        dispatch({
+          user: result.user,
+        });
+        console.log(result);
+      })
+      .catch((error) => alert(error.message));
+  };
+  // const register = (e) => {
+  //   e.preventDefault();
+
+  //   auth
+  //     .createUserWithEmailAndPassword(email, password)
+  //     .then((auth) => {
+  //       history.push('/');
+  //     })
+  //     .catch((e) => alert());
+  // };
+
   return (
     <div className="loginPage">
       <div className="loginPage__loginContainer">
         <div className="loginPage__login">
           <h1>Zaloguj się</h1>
-          <input placeholder="Login lub e-mail" type="text" />
-          <input placeholder="Hasło" type="text" />
+          <input
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            type="email"
+            placeholder="e-mail"
+          />
+          <input
+            placeholder="Hasło"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+            type="password"
+          />
           <div className="loginPage__loginButtons">
             <p>Nie pamiętasz hasła?</p>
-            <button>Zaloguj się</button>
+            <button onClick={login}>Zaloguj się</button>
           </div>
           <div className="loginPage__divider">
             <hr />
@@ -19,14 +72,14 @@ function LoginPage() {
             <hr />
           </div>
           <div className="loginPage__socialButtons">
-            <button className="loginPage__facebookButton">
+            <button onClick={signIn} className="loginPage__facebookButton">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Facebook_Circle.svg/1024px-Facebook_Circle.svg.png"
                 alt=""
               />
               Zaloguj się przez Facebook
             </button>
-            <button className="loginPage__googleButton">
+            <button onClick={signIn} className="loginPage__googleButton">
               <img
                 src="http://pngimg.com/uploads/google/google_PNG19635.png"
                 alt=""
@@ -37,7 +90,11 @@ function LoginPage() {
         </div>
         <div className="loginPage__register">
           <h3>Nie masz konta?</h3>
-          <p>Zarejestruj się</p>
+          <Link
+            style={{ color: 'inherit', textDecoration: 'none' }}
+            to="/register">
+            <p className="loginPage__registerButton">Zarejestruj się</p>
+          </Link>
         </div>
       </div>
       <div className="loginPage__rules">

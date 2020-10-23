@@ -1,14 +1,29 @@
 .profilePage__container {
   display: flex;
-  background-color: white;
+  flex-direction: column;
+
   margin: 15px;
   padding: 15px;
 }
 
+.profilePage__containerSettings {
+  display: flex;
+  background-color: white;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+}
+
 .profilePage__left {
+  flex: 0.5;
   display: flex;
   padding-right: 20px;
   border-right: 1px solid #ddd;
+  padding: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  justify-content: space-evenly;
 }
 
 .profilePage__left > img {
@@ -20,6 +35,130 @@
   flex-direction: column;
 }
 
+.profilePage__description > button {
+  border: 0;
+  background-color: white;
+  cursor: pointer;
+  color: #00a790;
+  text-transform: uppercase;
+  margin-top: 60px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: 500ms;
+}
+
+.profilePage__description > button:hover {
+  color: white;
+  background-color: #00a790;
+  border-radius: 10px;
+}
+
 .profilePage__description > img {
   object-fit: contain;
+  margin-top: 10px;
+}
+
+.profilePage__description > p {
+  text-align: center;
+}
+
+.profilePage__right {
+  flex: 0.5;
+  padding: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.profilePage__priceDescription {
+  color: #222;
+  margin-left: 15px;
+}
+
+.profilePage__upload {
+  display: flex;
+  flex-direction: column;
+}
+
+.profilePage__upload > progress {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+}
+
+.profilePage__upload > input {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 6px;
+
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #aaa;
+
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: #222;
+  font-family: Open Sans, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  line-height: 21px;
+
+  min-width: 0;
+  outline: none;
+  padding: 8px;
+}
+
+.profilePage__upload > button {
+  background-color: #ff5a00;
+  color: white;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  width: 95%;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+
+  height: 40px;
+  box-sizing: border-box;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.profilePage__containerProducts {
+  background-color: white;
+  margin-top: 15px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.profilePage__containerProducts > h1 {
+  margin-left: 15px;
+}
+
+@media only screen and (max-width: 833px) {
+  .profilePage__containerSettings {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .profilePage__left > img {
+    width: 80px;
+  }
 }

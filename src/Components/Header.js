@@ -1,25 +1,54 @@
-import React from "react";
-import "./Header.css";
-import StarBorderOutlinedIcon from "@material-ui/icons/StarBorderOutlined";
-import ForumOutlinedIcon from "@material-ui/icons/ForumOutlined";
-import NotificationsNoneOutlinedIcon from "@material-ui/icons/NotificationsNoneOutlined";
-import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
-import PersonOutlinedIcon from "@material-ui/icons/PersonOutlined";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import SearchIcon from "@material-ui/icons/Search";
-import { IconButton } from "@material-ui/core";
+import React, { useState } from 'react';
+import './Header.css';
+import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined';
+import ForumOutlinedIcon from '@material-ui/icons/ForumOutlined';
+import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneOutlined';
+import LocalMallOutlinedIcon from '@material-ui/icons/LocalMallOutlined';
+import PersonOutlinedIcon from '@material-ui/icons/PersonOutlined';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import SearchIcon from '@material-ui/icons/Search';
+import { IconButton } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import { useStateValue } from '../StateProvider';
+import { useHistory } from 'react-router-dom';
 
 function Header() {
+  const [{ basket, user, searchedPhrase }, dispatch] = useStateValue();
+
+  const history = useHistory();
+  const [input, setInput] = useState('');
+
+  const search = (e) => {
+    e.preventDefault();
+
+    dispatch({
+      type: 'SEARCH_PRODUCT',
+      item: {
+        searchedPhrase: input,
+      },
+    });
+
+    history.push('/search');
+  };
+
   return (
     <div className="header">
-      <img
-        className="header__logo"
-        src="https://assets.allegrostatic.com/metrum/brand/allegro-347440b030.svg"
-        alt=""
-      />
+      <Link to="/">
+        <img
+          className="header__logo"
+          src="https://assets.allegrostatic.com/metrum/brand/allegro-347440b030.svg"
+          alt=""
+        />
+      </Link>
+
       <div className="header__middle">
         <form className="header__form">
-          <input className="header__input" placeholder="czego szukasz?" />
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            className="header__input"
+            placeholder="czego szukasz?"
+          />
           <div className="header__searchMore">
             <button className="header__searchMoreButton">szukaj wielu</button>
           </div>
@@ -57,42 +86,67 @@ function Header() {
             </div>
           </div>
 
-          <button type="submit" className="header__button">
+          <button type="submit" onClick={search} className="header__button">
             SZUKAJ
           </button>
-          <button type="submit" className="header__button--searchIcon">
+
+          <button
+            onClick={search}
+            type="submit"
+            className="header__button--searchIcon">
             <SearchIcon />
           </button>
         </form>
       </div>
       <div className="header__right">
-        <IconButton>
-          <StarBorderOutlinedIcon className="header__icon" />
-        </IconButton>
-        <IconButton>
-          <ForumOutlinedIcon className="header__icon" />
-        </IconButton>
-        <IconButton>
-          <NotificationsNoneOutlinedIcon className="header__icon" />
-        </IconButton>
-        <IconButton>
-          <LocalMallOutlinedIcon className="header__icon" />
-        </IconButton>
-        <IconButton className=" header__icon--person">
-          <PersonOutlinedIcon className="header__icon" />
-        </IconButton>
-
-        <div className="header__rightSmart">
-          <div className="header__rightTitle">
-            <h4>
-              bądź <span>Smart!</span>
-            </h4>
-            <h3>Moje Allegro</h3>
-          </div>
+        <Link to={!user ? '/login' : '/profile'}>
           <IconButton>
-            <ExpandMoreIcon className="header__icon" />
+            <StarBorderOutlinedIcon className="header__icon" />
           </IconButton>
-        </div>
+        </Link>
+
+        <Link to={!user ? '/login' : '/profile'}>
+          <IconButton>
+            <ForumOutlinedIcon className="header__icon" />
+          </IconButton>
+        </Link>
+
+        <Link to={!user ? '/login' : '/profile'}>
+          <IconButton>
+            <NotificationsNoneOutlinedIcon className="header__icon" />
+          </IconButton>
+        </Link>
+
+        <Link to="/cart">
+          <IconButton>
+            <LocalMallOutlinedIcon className="header__icon" />
+            {basket?.length > 0 && (
+              <div className="header__cartNumber">{basket?.length}</div>
+            )}
+          </IconButton>
+        </Link>
+
+        <Link to={!user ? '/login' : '/profile'}>
+          <IconButton className=" header__icon--person">
+            <PersonOutlinedIcon className="header__icon" />
+          </IconButton>
+        </Link>
+
+        <Link
+          to={!user && '/login'}
+          style={{ color: 'inherit', textDecoration: 'none' }}>
+          <div className="header__rightSmart">
+            <div className="header__rightTitle">
+              <h4>
+                bądź <span>Smart!</span>
+              </h4>
+              <h3>Moje Allegro</h3>
+            </div>
+            <IconButton>
+              <ExpandMoreIcon className="header__icon" />
+            </IconButton>
+          </div>
+        </Link>
       </div>
     </div>
   );

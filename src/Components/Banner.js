@@ -17,21 +17,21 @@ function Banner() {
               imgUrl="https://botland.com.pl/blog/wp-content/uploads/2020/06/paneleslonecznemaly-300x229.png"
               discount="-10%"
               oldPrice="199,99 zł"
-              price="179"
+              price={179.99}
               description="ogniwo fotowoltaiczne"
             />
             <Product
               imgUrl="https://www.multiproject.com.pl/images/Foto/Fotowoltaika/03395.jpg"
               discount="-40%"
               oldPrice="1999,99 zł"
-              price="1099"
+              price={1099.99}
               description="Panel Fotowoltaiczny"
             />
             <Product
               imgUrl="https://www.mc-sklep.pl/images/solare/4sun/panel-elastyczny-4sun-flex-etfe-m-150w-24v-prestige.jpg"
               discount="-10%"
               oldPrice="2499,99 zł"
-              price="2249"
+              price={2249.99}
               description="Panel fotowoltaiczny Flex"
             />
           </div>
